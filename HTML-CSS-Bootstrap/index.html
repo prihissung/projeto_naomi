@@ -1,0 +1,267 @@
+<!DOCTYPE HTML>
+<html lang="pt-br">
+
+ <head>
+    <meta charset="UTF-8">
+    <!--  <meta charset="UTF-8">-->
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" 
+          integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="style.css">
+       <!-- Adicione o link para o arquivo JavaScript do Bootstrap e o jQuery (necessário para o Bootstrap) -->
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script> 
+  <!--<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">-->
+    <title>Naomi #15Anos</title>
+ </head>
+
+ <body>
+          <div class="carousel-inner">
+             <div class="carousel-item active">
+               <img src="img/naomi3.jpg" class="d-block w-100" alt="Museu do Ipiranga">
+                <div class="carousel-caption">
+                    <h2>08.09.2023</h2>
+                    <h1>Naomi</h1>
+                    <h2>Meus 15 anos</h2>
+                    <h3>Convido você para comemorar comigo essa noite mágica,
+                    </br>inesquecivel e única</h3>
+                 </div>
+             </div>
+         </div>
+      </div>
+   </header>
+
+   <!--cronometro-->
+   <section id="cronometro">
+   <div class="container-fluid text-center p-3">
+    <h1>Faltam</h1>
+    <div class="display-3" id="timer">Calculando...</div>
+  </div>
+   <script>
+    function startCountdown(endDate, display) {
+      setInterval(function () {
+        const now = new Date().getTime();
+        const difference = endDate - now;
+  
+        if (difference <= 0) {
+          display.textContent = "Tempo expirado!";
+        } else {
+          const days = Math.floor(difference / (1000 * 60 * 60 * 24));
+          const hours = Math.floor((difference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+          const minutes = Math.floor((difference % (1000 * 60 * 60)) / (1000 * 60));
+          const seconds = Math.floor((difference % (1000 * 60)) / 1000);
+  
+          const formattedTime = `${days}dias ${formatTimeComponent(hours)}h | ${formatTimeComponent(minutes)}m | ${formatTimeComponent(seconds)}s`;
+          display.textContent = formattedTime;
+        }
+      }, 1000);
+    }
+  
+    function formatTimeComponent(time) {
+      return time < 10 ? `0${time}` : time;
+    }
+  
+    window.onload = function () {
+      const endDate = new Date("2023-09-08T21:00:00").getTime();
+      const display = document.querySelector('#timer');
+      startCountdown(endDate, display);
+    };
+  </script>
+  </section>
+  
+  <!--Confirmação de Presença-->
+  <section id="contato">
+    <section class="container p-2">
+        <h2 class="text-center">Confirme sua presença</h2>
+        <form method="GET" action="">
+            <fieldset>
+                <legend>Você irá a festa?</legend>
+                <div class="form-check">
+                    <input type="checkbox" class="form-check-input" name="passagens" value="Passagens" id="compraPassagens">
+                    <label class="form-check-label" for="compraPassagens">
+                        SIM! Eu confirmo</label>
+                
+                <div class="form-check">
+                    <input type="checkbox" class="form-check-input" name="hospedagem" value="Hospedagem" id="reservaHospedagem">
+                    <label class="form-check-label" for="reservaHospedagem">
+                        Não posso :(
+                    </label>
+                </div>
+            </fieldset>
+            <fieldset>
+                <legend></legend>
+                <div class="mb-3">
+                    <label class="form-label" for="nome">
+                        Nome
+                    </label>
+                    <input type="text" class="form-control" name="nome" id="nome">
+                </div>   
+            </fieldset>
+            <button class="btn btn-secundary">Enviar</button>
+        </form>
+      </section>
+    </section>
+
+<!-- Presentes -->
+<section id="presentes">
+    <section class="container-fluid text-center p-3">
+      <div class="clearfix">
+        <h2>Sugestões de Presentes</h2>
+      </div>
+  
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-4">
+            <div class="card-body">
+              <img class="img rounded-circle" width="200" height="200" src="img/calça.jpg" alt="Foto do membro do time">
+              <h5 class="card-title"></h5>
+              <h6 class="card-subtitle mb-2 text-muted"></h6>
+              <p class="card-text"></p>
+              <a href="https://br.shein.com/Solid-Flap-Pocket-Cargo-Pants-p-13509662-cat-1740.html?src_identifier=st%3D2%60sc%3Dstreet%60sr%3D0%60ps%3D1&src_module=search&src_tab_page_id=page_home1690081813470&mallCode=1" class="btn btn-primary">Calça</a>
+            </div>
+          </div>
+  
+          <div class="col-lg-4">
+            <div class="card-body">
+              <img class="img rounded-circle" width="200" height="200" src="img/street.jpg" alt="Foto do membro do time">
+              <h5 class="card-title"></h5>
+              <h6 class="card-subtitle mb-2 text-muted"></h6>
+              <p class="card-text"></p>
+              <a href="https://br.shein.com/DAZY-Letter-Graphic-Drop-Shoulder-Tee-p-12393170-cat-1738.html?src_identifier=st%3D2%60sc%3Dstreet%60sr%3D0%60ps%3D1&src_module=search&src_tab_page_id=page_home1690081813470&mallCode=1" class="btn btn-primary">Camiseta</a>
+            </div>
+          </div>
+
+          <div class="col-lg-4">
+            <div class="card-body">
+              <img class="img rounded-circle" width="200" height="200" src="img/calça.jpg" alt="Foto do membro do time">
+              <h5 class="card-title"></h5>
+              <h6 class="card-subtitle mb-2 text-muted"></h6>
+              <p class="card-text"></p>
+              <a href="https://br.shein.com/Solid-Flap-Pocket-Cargo-Pants-p-13509662-cat-1740.html?src_identifier=st%3D2%60sc%3Dstreet%60sr%3D0%60ps%3D1&src_module=search&src_tab_page_id=page_home1690081813470&mallCode=1" class="btn btn-primary">Calça</a>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+  </section>
+  
+	   <section id="presemtes1">
+		<section class="container-fluid  text-center p-3">
+		 <div class="clearfix">
+		<h2></h2>
+		</div> 
+		<div id="presentes1" class="container">
+		<div class="row">
+		  <div class="col-lg-3">
+		  <img 
+			class="bd-placeholder-img rounded-circle" width="200" height="200"
+			src="img/babaloo.jpg" alt="Foto do membro do time"/>
+      <h6 class="card-subtitle mb-2 text-muted"></h6>
+		  <a href="https://www.boticario.com.br/combo-cuide-se-bem-bubbaloo-morango-sabonete-liquido-150ml-locao-hidratante-desodorante-corporal-400ml/"  class="btn btn-primary">Creme de Corpo</a>
+		  <div class="p-4">
+			<h5></h5>
+			<p></p>
+		  </div>  
+		  </div>  
+		  <div class="col-lg-3">
+		  <img 
+			class="bd-placeholder-img rounded-circle" width="200" height="200"
+			src="img/calça2.jpg" alt="Foto do membro do time"/>
+      <h6 class="card-subtitle mb-2 text-muted"></h6>
+		  <a href="https://br.shein.com/Solid-Flap-Pocket-Cargo-Pants-p-13509662-cat-1740.html?src_identifier=st%3D2%60sc%3Dstreet%60sr%3D0%60ps%3D1&src_module=search&src_tab_page_id=page_home1690081813470&mallCode=1"  class="btn btn-primary">Calça</a>
+		  <div class="p-3">
+			<h5></h5>
+			<p></p>
+		  </div>
+		  </div>
+		  <div class="col-lg-3">
+		  <img 
+			class="bd-placeholder-img rounded-circle" width="200" height="200"
+			src="img/street.jpg" alt="Foto do membro do time"/>
+      <h6 class="card-subtitle mb-2 text-muted"></h6>
+		  <a href="https://br.shein.com/Solid-Flap-Pocket-Cargo-Pants-p-13509662-cat-1740.html?src_identifier=st%3D2%60sc%3Dstreet%60sr%3D0%60ps%3D1&src_module=search&src_tab_page_id=page_home1690081813470&mallCode=1" class="btn btn-primary">Camiseta</a>
+		  <div class="p-3">
+			<h5></h5>
+			<p></p>
+		  </div>
+		  </div>
+		</div>
+		</div> 
+	  </section>
+
+      <section id="presentes">
+        <section class="container-fluid text-center p-3">
+          <div class="clearfix">
+            <h2>Sugestão de Presentes</h2>
+          </div>
+          <div class="container">
+            <div class="row">
+              <div class="col-lg-4">
+                <div class="card-body">
+                  <img class="img rounded-circle" width="200" height="200" src="img/calça.jpg" alt="Foto do membro do time">
+                  <h5 class="card-title">O Boticario</h5>
+                  <h6 class="card-subtitle mb-2 text-muted"></h6>
+                  <p class="card-text">Creme de corpo, perfumes...</p>
+                  <a href="https://br.shein.com/Solid-Flap-Pocket-Cargo-Pants-p-13509662-cat-1740.html?src_identifier=st%3D2%60sc%3Dstreet%60sr%3D0%60ps%3D1&src_module=search&src_tab_page_id=page_home1690081813470&mallCode=1" class="btn btn-primary">Calça</a>
+                </div>
+              </div>
+      
+              <div class="col-lg-4">
+                <div class="card-body">
+                  <img class="img rounded-circle" width="200" height="200" src="img/calça.jpg" alt="Foto do membro do time">
+                  <h5 class="card-title">O Boticario</h5>
+                  <h6 class="card-subtitle mb-2 text-muted"></h6>
+                  <p class="card-text">Creme de corpo, perfumes...</p>
+                  <a href="https://br.shein.com/Solid-Flap-Pocket-Cargo-Pants-p-13509662-cat-1740.html?src_identifier=st%3D2%60sc%3Dstreet%60sr%3D0%60ps%3D1&src_module=search&src_tab_page_id=page_home1690081813470&mallCode=1" class="btn btn-primary">Calça</a>
+                </div>
+              </div>
+    
+              <div class="col-lg-4">
+                <div class="card-body">
+                  <img class="img rounded-circle" width="200" height="200" src="img/calça.jpg" alt="Foto do membro do time">
+                  <h5 class="card-title">O Boticario</h5>
+                  <h6 class="card-subtitle mb-2 text-muted"></h6>
+                  <p class="card-text">Creme de corpo, perfumes...</p>
+                  <a href="https://br.shein.com/Solid-Flap-Pocket-Cargo-Pants-p-13509662-cat-1740.html?src_identifier=st%3D2%60sc%3Dstreet%60sr%3D0%60ps%3D1&src_module=search&src_tab_page_id=page_home1690081813470&mallCode=1" class="btn btn-primary">Calça</a>
+                </div>
+              </div>
+    
+            </div>
+          </div>
+        </section>
+      </section>
+  
+
+    <footer class=" container-fluid text-center p-2">
+      <p>Desenvolvido por Priscilla Hissung</p>
+    </footer>
+      
+      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" 
+              integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous">
+      </script>
+
+  </body>
+      
+      <!-- Modal -->
+      <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title fs-5" id="exampleModalLabel">Suas compras</h5>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              Produto adicionado ao carrinho!
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Continuar comprando</button>
+              <a href="carrinho.html" type="button" class="btn btn-success">Finalizar a compra</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+</html>
